@@ -1,0 +1,6 @@
+framework module Pods_HiWebApp {
+  umbrella header "Pods-HiWebApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

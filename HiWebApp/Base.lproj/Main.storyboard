@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeVC" id="BYZ-38-t0r" customClass="WelcomeVC" customModule="HiWebApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Urg-SG-veD" customClass="SDAnimatedImageView">
+                                <rect key="frame" x="107" y="353" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MSz-Mz-Xp2"/>
+                                    <constraint firstAttribute="height" constant="200" id="mbN-uY-bft"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Urg-SG-veD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1g8-My-b8g"/>
+                            <constraint firstItem="Urg-SG-veD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ZG7-ke-5ws"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animatedImageView" destination="Urg-SG-veD" id="L1N-rw-1Ym"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="87"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="R0K-xX-Bla">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="cVU-gN-LsV" customClass="WebViewController" customModule="HiWebApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KUl-4f-rAr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8Q-Jc-liG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-We-UEE">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem width="16" style="plain" systemItem="fixedSpace" id="JbZ-u6-fF1"/>
+                                    <barButtonItem title="◀︎" id="YrB-Cx-scB">
+                                        <connections>
+                                            <action selector="didClickOnBack:" destination="cVU-gN-LsV" id="Fcu-aI-OfP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="16" style="plain" systemItem="fixedSpace" id="LXL-MT-ou2"/>
+                                    <barButtonItem title="▶︎" id="zc8-0M-iC1">
+                                        <connections>
+                                            <action selector="didClickOnForward:" destination="cVU-gN-LsV" id="YBt-32-ggl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ryj-dX-KXH"/>
+                                    <barButtonItem systemItem="refresh" id="5KS-94-gbo">
+                                        <connections>
+                                            <action selector="didClickOnReload:" destination="cVU-gN-LsV" id="B7i-6F-0wM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="16" style="plain" systemItem="fixedSpace" id="e2U-h2-D5f"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L8M-dp-4yo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h8Q-Jc-liG" firstAttribute="trailing" secondItem="L8M-dp-4yo" secondAttribute="trailing" id="1KK-0f-Rj3"/>
+                            <constraint firstItem="L8M-dp-4yo" firstAttribute="bottom" secondItem="Kk1-We-UEE" secondAttribute="bottom" id="GlK-BA-Hea"/>
+                            <constraint firstItem="Kk1-We-UEE" firstAttribute="top" secondItem="h8Q-Jc-liG" secondAttribute="bottom" id="Uxd-nx-djt"/>
+                            <constraint firstItem="h8Q-Jc-liG" firstAttribute="leading" secondItem="L8M-dp-4yo" secondAttribute="leading" id="cRh-lw-hNj"/>
+                            <constraint firstItem="h8Q-Jc-liG" firstAttribute="top" secondItem="L8M-dp-4yo" secondAttribute="top" id="eyX-m3-DVy"/>
+                            <constraint firstItem="Kk1-We-UEE" firstAttribute="leading" secondItem="L8M-dp-4yo" secondAttribute="leading" id="tZv-Ii-zeV"/>
+                            <constraint firstItem="L8M-dp-4yo" firstAttribute="trailing" secondItem="Kk1-We-UEE" secondAttribute="trailing" id="y8N-iS-ZSK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="YrB-Cx-scB" id="0nu-Jh-hAx"/>
+                        <outlet property="forwardBarButtonItem" destination="zc8-0M-iC1" id="bL5-lx-T36"/>
+                        <outlet property="reloadBarButtonItem" destination="5KS-94-gbo" id="jCI-Rl-2qS"/>
+                        <outlet property="toolBar" destination="Kk1-We-UEE" id="pip-ZK-FfX"/>
+                        <outlet property="webView" destination="h8Q-Jc-liG" id="1qo-RH-Y7a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NU-h3-UwU" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
