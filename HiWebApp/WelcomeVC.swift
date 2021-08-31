@@ -36,7 +36,7 @@ class WelcomeVC: UIViewController {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.1) {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
